@@ -268,7 +268,7 @@ td button{
                     </div>                    
                 </div>
                 <div class="head-right">
-                    <a href=""><i class="fa-regular fa-bell"><span>0</span></i></a>
+<!--                     <a href=""><i class="fa-regular fa-bell"><span>0</span></i></a> -->
                     <span class="user-align"><img src="img/admin.png" alt="admin-logo" width="35px"><%=session.getAttribute("name") %><i class="fa-solid fa-angle-down"></i>
                         <span class="drop-logout">
                             <a href="LogoutServlet"><i class="fa-solid fa-right-from-bracket"></i>Log Out </a>

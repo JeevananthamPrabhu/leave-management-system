@@ -189,4 +189,24 @@
     <servlet-name>DisplayMangerServlet</servlet-name>
     <url-pattern>/DisplayMangerServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LeaveBalanceServlet</display-name>
+    <servlet-name>LeaveBalanceServlet</servlet-name>
+    <servlet-class>project.servlet.LeaveBalanceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LeaveBalanceServlet</servlet-name>
+    <url-pattern>/LeaveBalanceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DisplayLeaveBalanceServlet</display-name>
+    <servlet-name>DisplayLeaveBalanceServlet</servlet-name>
+    <servlet-class>project.servlet.DisplayLeaveBalanceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayLeaveBalanceServlet</servlet-name>
+    <url-pattern>/DisplayLeaveBalanceServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

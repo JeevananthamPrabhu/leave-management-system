@@ -6,21 +6,22 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import project.controller.AddEmployeeController;
-import project.model.EmployeeDataModel;
+
+import project.controller.LeaveBalanceController;
+
 
 import java.io.IOException;
 
 /**
- * Servlet implementation class AddEmployeeServlet
+ * Servlet implementation class DisplayLeaveBalanceServlet
  */
-public class AddEmployeeServlet extends HttpServlet {
+public class DisplayLeaveBalanceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddEmployeeServlet() {
+    public DisplayLeaveBalanceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,34 +33,20 @@ public class AddEmployeeServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(false);
 		if (session != null && session.getAttribute("username") != null) {
-			EmployeeDataModel model=new EmployeeDataModel();
-			model.setempid(request.getParameter("employeeID"));
-			model.setname(request.getParameter("employeeName"));
-			model.setdept(request.getParameter("employeeDepartment"));
-			String addby = (String)session.getAttribute("username");
-			AddEmployeeController control=new AddEmployeeController(model,addby);
-			if(control.store() && control.storeleave())
-			{
-				System.out.println("AddEmp Success");
-				if(addby.equals("admin"))
-				{
-					response.sendRedirect("AdminAddEmployee.jsp");
-					//request.getRequestDispatcher("AdminAddEmployee.jsp").forward(request, response);
-				}
-				else
-				{
-					response.sendRedirect("ManagerAddEmployee.jsp");
-					//request.getRequestDispatcher("ManagerAddEmployee.jsp").forward(request, response);
-				}					
-			}
-			else
-			{
-				System.out.println("AddEmp Fail");
-				response.sendRedirect("AddEmployee.jsp");
+			LeaveBalanceController control=new LeaveBalanceController((String)session.getAttribute("username"));
+			if(control.getleavedata()) {
+				//request.setAttribute("username",model.getusername());
+				System.out.println("getleavedata Success");
+					request.setAttribute("List", control.List);
+					request.getRequestDispatcher("LeaveBalance.jsp").forward(request, response);
+			}	
+			else {
+				System.out.println("getleavedata Fail");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 		} else {
 			response.sendRedirect("index.jsp");
-        }
+	    }
 	}
 
 	/**

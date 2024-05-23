@@ -13,24 +13,30 @@
     	<div class="main">
         	<%@include file="EmployeeSidebarHead.jsp" %>
             <div class="report">
-                <div class="addleave">
+                <div class="add">
                     <h1>Apply Leave</h1>
                     <form action="ApplyLeaveServlet" method="post">
                         <div class="group">
                             <label for="fromdate">From Date:</label><br>
-                            <input type="date" id="fromdate" name="fromdate">
+                            <input type="date" id="fromdate" name="fromdate" required>
                         </div>     
                         <div class="group">
                             <label for="todate">To Date:</label><br>
-                            <input type="date" id="todate" name="todate">
+                            <input type="date" id="todate" name="todate" required>
                         </div>                 
                         <div class="group">
                             <label for="leavetype">Leave Type:</label><br>
-                            <input type="text" id="leavetype" name="leavetype">
+                            <select name="leavetype" id="leavetype" required>
+                              <option disabled selected value>--choose leave type--</option>
+							  <option value="Sick Leave">Sick Leave</option>
+							  <option value="Vacation Leave">Vacation Leave</option>
+							  <option value="Personal Leave">Personal Leave</option>
+							  <option value="Casual Leave">Casual Leave</option>
+							</select>
                         </div>
                         <div class="group">
                             <label for="Reason">Reason:</label><br>
-                            <input type="text" id="Reason" name="reason">
+                            <input type="text" id="Reason" name="reason" required>
                         </div>
                         <div class="group">
                             <button type="submit">Apply</button>
@@ -40,19 +46,5 @@
             </div>
         </div>
     </div>
-    <script>
-         const check=document.querySelector('#check');
-        const sidebar=document.querySelector('.sidebar');
-        const main=document.querySelector('.main');
-        check.addEventListener('change', function() {
-            if (this.checked) {
-                sidebar.classList.add('active');
-                main.classList.add('addpadding');
-            } else {
-                sidebar.classList.remove('active'); 
-                main.classList.remove('addpadding');
-            }
-        });
-    </script>
 </body>
 </html>

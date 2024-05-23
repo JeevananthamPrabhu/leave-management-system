@@ -214,12 +214,12 @@ table,td,th{
 .group label{
     font-size: medium;
 }
-.group input{
-    height: 30px;
+.group input,.group select{
+	box-sizing:border-box;
     margin-top: 10px;
     width: 100%;
     outline: none;
-    padding: 5px 10px ;
+    padding:10px ;
     border: 1px solid rgba(170, 170, 170, 0.3);
     border-radius: 4px;
     font-size: medium;
@@ -238,13 +238,18 @@ td button{
          <div class="sidebar">
         <ul>
             <li>
-                <a href="ManagerAddEmployee.jsp" >
+                <a href="Apply.jsp" >
                     <i class="fa-regular fa-calendar-plus"></i><span>Apply Leave</span>
                 </a>
             </li>
             <li>
-                <a href="DisplayEmployeeServlet">
+                <a href="DisplayLeaveServlet">
                     <i class="fa-solid fa-clock-rotate-left"></i><span>Leave History</span>
+                </a>
+            </li>
+            <li>
+                <a href="DisplayLeaveBalanceServlet">
+                    <i class="fa-regular fa-hourglass-half"></i><span>Leave balances</span>
                 </a>
             </li>
         </ul>
@@ -263,7 +268,7 @@ td button{
                     </div>                    
                 </div>
                 <div class="head-right">
-                    <a href=""><i class="fa-regular fa-bell"><span>0</span></i></a>
+<!--                     <a href=""><i class="fa-regular fa-bell"><span>0</span></i></a> -->
                     <span class="user-align"><img src="img/emp.png" alt="emp-logo" width="35px"><%=session.getAttribute("empname") %><i class="fa-solid fa-angle-down"></i>
                         <span class="drop-logout">
                             <a href="LogoutServlet"><i class="fa-solid fa-right-from-bracket"></i>Log Out </a>

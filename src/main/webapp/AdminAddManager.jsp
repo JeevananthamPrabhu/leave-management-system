@@ -26,8 +26,7 @@
                         <div class="group">
                             <label for="emailID">Email ID:</label><br>
                             <input type="text" id="emailID" name="emailID" required>
-                        </div>         
-                        <div class="group">
+                        </div>
                         <div class="group">
                             <button type="submit">Add</button>
                         </div>

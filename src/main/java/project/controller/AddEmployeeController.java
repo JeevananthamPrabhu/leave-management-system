@@ -4,10 +4,12 @@ import java.sql.Statement;
 
 import project.Connect;
 import project.model.EmployeeDataModel;
+import project.model.LeaveTrackingModel;
 
 
 public class AddEmployeeController {
 	EmployeeDataModel model;
+	LeaveTrackingModel trackmodel=new LeaveTrackingModel();
 	String addby;
 	public AddEmployeeController(EmployeeDataModel model,String addby)
 	{
@@ -26,4 +28,20 @@ public class AddEmployeeController {
 		}
 		return false;
 	}
+public boolean storeleave() {
+		
+		try {
+			Statement st=Connect.connectionStatement();
+			for(String leavetype :trackmodel.getleavetypes()) {
+				String sql="insert into leavestracking(empid,leavetype) values('"+model.getempid()+"','"+leavetype+"')";
+				st.execute(sql);				
+			}			
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	
 }
