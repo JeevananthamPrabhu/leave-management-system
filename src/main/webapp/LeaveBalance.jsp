@@ -21,7 +21,6 @@
                         <h1>Leave balances Tracking</h1>
                         <table>
                             <thead>
-                 
                                 <td>S.No</td>
                                 <td>Leave Types</td>
                                 <td>Accrued Leaves</td>
@@ -41,11 +40,12 @@
                                 <td><%=model.getleavetype() %></td>
                                 <td><%=model.getaccrued() %></td>
                                 <td><%=model.getutilized() %></td>
-                                <td><%=(model.getaccrued()-model.getutilized()>0)?model.getaccrued()-model.getutilized():model.getutilized()-model.getaccrued() %></td>
+                                <td><%=model.getaccrued()-model.getutilized() %></td>
                             	
                             	</tr>
-                            	<% cnt++;} 
-                    }%>
+                            	<%cnt++;
+                            	}
+                            	}%>
                             </tbody>
                         </table>
                     </div>

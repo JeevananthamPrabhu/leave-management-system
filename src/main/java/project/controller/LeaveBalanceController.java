@@ -45,7 +45,7 @@ public class LeaveBalanceController {
 	public boolean update() {
 		try {
 			Statement st=Connect.connectionStatement();
-			String sql="UPDATE leavestracking SET accrued = accrued-1,utilized = utilized+1 WHERE empid= '"+model.getempid()+"' and leavetype='"+model.getleavetype()+"'";
+			String sql="UPDATE leavestracking SET utilized = utilized+1 WHERE empid= '"+model.getempid()+"' and leavetype='"+model.getleavetype()+"'";
 			st.execute(sql);
 			return true;		
 		}
