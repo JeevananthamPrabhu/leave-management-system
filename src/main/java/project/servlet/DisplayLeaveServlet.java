@@ -17,7 +17,6 @@ import java.io.IOException;
  */
 public class DisplayLeaveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
