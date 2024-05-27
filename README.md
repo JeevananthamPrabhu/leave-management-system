@@ -31,6 +31,22 @@ Create new db named leavedb
 
 Import the database file 
 
+---------------------------##Function----------------------------------
+
+Login as manager:
+
+username : admin
+
+password: 123
+
+Add employees or managers you required
+
+Username and password for managers and employee Login :
+
+Username : Respective Employee's or Manager's Id
+
+Default password : 123
+
 ---------------------------##How to Run----------------------------------
 
 Open the index.jsp (scr->main->webapp->index.jsp)
