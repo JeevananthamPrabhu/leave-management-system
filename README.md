@@ -1,5 +1,5 @@
 
-This project utilizes the following libraries (MySQL(XAMPP), Java, JSP)
+This project utilizes MySQL(XAMPP), Java, JSP files
 
 ---------------##Installation and configuration:-----------------------
 
