@@ -6,7 +6,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import project.controller.DisplayLeaveController;
 import project.controller.EmployeeSignInController;
+import project.controller.LeaveBalanceController;
 import project.model.SignInModel;
 
 import java.io.IOException;
@@ -42,7 +44,7 @@ public class EmployeeSignInServlet extends HttpServlet {
 			session.setAttribute("username", username);
 			session.setAttribute("empname", control.name);
 			System.out.println("Login Success");
-			request.getRequestDispatcher("Apply.jsp").forward(request, response);
+			response.sendRedirect("GetLeaveBalanceServlet");
 		}
 		else if(control.checkexists()){
 			System.out.println("Sign In Fail exists");

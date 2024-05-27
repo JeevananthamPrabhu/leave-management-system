@@ -231,7 +231,7 @@ td button{
          <div class="sidebar">
         <ul>
             <li>
-                <a href="Apply.jsp" >
+                <a href="GetLeaveBalanceServlet" >
                     <i class="fa-regular fa-calendar-plus"></i><span>Apply Leave</span>
                 </a>
             </li>

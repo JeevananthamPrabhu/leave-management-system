@@ -209,4 +209,14 @@
     <servlet-name>DisplayLeaveBalanceServlet</servlet-name>
     <url-pattern>/DisplayLeaveBalanceServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetLeaveBalanceServlet</display-name>
+    <servlet-name>GetLeaveBalanceServlet</servlet-name>
+    <servlet-class>project.servlet.GetLeaveBalanceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetLeaveBalanceServlet</servlet-name>
+    <url-pattern>/GetLeaveBalanceServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

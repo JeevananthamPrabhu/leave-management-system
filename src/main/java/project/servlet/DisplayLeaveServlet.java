@@ -45,10 +45,7 @@ public class DisplayLeaveServlet extends HttpServlet {
 			}	
 			else if(control.getallleavedata(username)) {
 				System.out.println("getleavedata Success");
-				
 				request.setAttribute("leaveList", control.leaveList);
-				
-					
 				
 				if(session.getAttribute("username").toString().equals("admin"))
 				{

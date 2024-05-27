@@ -57,7 +57,8 @@ public class ApplyLeaveServlet extends HttpServlet {
 	        model.setfromdate(fromdate);
 	        model.setempname(empname);
 	        model.setempid(empid);
-	     //   System.out.println(request.getParameter("username"));
+	        
+	        System.out.println(leavetype);
 	        
 	        ApplyLeaveController control=new ApplyLeaveController(model);
 	        LeaveBalanceController trackcontrol=new LeaveBalanceController(trackmodel);
@@ -69,7 +70,7 @@ public class ApplyLeaveServlet extends HttpServlet {
 					//request.setAttribute("username", username);
 					//request.setAttribute("resultList", control.resultList);
 					//request.setAttribute("leaveadded", "");
-				response.sendRedirect("Apply.jsp");
+				response.sendRedirect("GetLeaveBalanceServlet");
 					//System.out.println("Task get Success");
 			}
 			else

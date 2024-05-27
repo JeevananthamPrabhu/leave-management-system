@@ -29,7 +29,6 @@ public class LeaveBalanceController {
 			while(r.next()) {
 				LeaveTrackingModel m=new LeaveTrackingModel();
 				m.setleavetype(r.getString(2));
-				System.out.println(r.getString(3)+" "+r.getString(4));
 				m.setaccrued(Integer.parseInt(r.getString(3)));
 				m.setutilized(Integer.parseInt(r.getString(4)));
 				List.add(m);
@@ -45,6 +44,7 @@ public class LeaveBalanceController {
 	public boolean update() {
 		try {
 			Statement st=Connect.connectionStatement();
+			System.out.println(model.getleavetype());
 			String sql="UPDATE leavestracking SET utilized = utilized+1 WHERE empid= '"+model.getempid()+"' and leavetype='"+model.getleavetype()+"'";
 			st.execute(sql);
 			return true;		

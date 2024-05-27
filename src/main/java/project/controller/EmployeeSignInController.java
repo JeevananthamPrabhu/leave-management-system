@@ -67,24 +67,5 @@ public class EmployeeSignInController {
 		}
 		return false;
 	}
-	public boolean getleavedata() {
-		try {
-			Statement st=Connect.connectionStatement();
-			String sql="select * from leaves";
-			ResultSet r=st.executeQuery(sql);
-			while(r.next()) {
-//				TaskListModel m=new TaskListModel();
-//				m.settask(r.getString(1));
-//				m.setstatus(r.getString(2));
-//				m.setdate(r.getString(3));
-//				resultList.add(m);
-			}
-			return true;		
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return false;
-	}
+	
 }

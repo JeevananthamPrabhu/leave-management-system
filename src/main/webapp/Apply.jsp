@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="project.model.LeaveTrackingModel" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +30,23 @@
                         <div class="group">
                             <label for="leavetype">Leave Type:</label><br>
                             <select name="leavetype" id="leavetype" required>
-                              <option disabled selected value>--choose leave type--</option>
-							  <option value="Sick Leave">Sick Leave</option>
-							  <option value="Vacation Leave">Vacation Leave</option>
-							  <option value="Personal Leave">Personal Leave</option>
-							  <option value="Casual Leave">Casual Leave</option>
+                              <option disabled selected >--choose leave type--</option>
+                                                          <% Object ListObj = session.getAttribute("List");
+                            		int cnt=1;
+                if(ListObj != null){
+                	List<LeaveTrackingModel> List = (List<LeaveTrackingModel>) ListObj;
+                for(LeaveTrackingModel model : List){
+                    %>
+							  <option value="<%=model.getleavetype() %>"
+							  <% if(model.getutilized()>=4){ %>
+								  disabled 
+							  ><%=model.getleavetype() %> - No Remaining Leaves</option>
+							  <%}else{ %>
+							  ><%=model.getleavetype() %></option>
+							  <%} %>
+							  <%cnt++;
+                            	}
+                            	}%>
 							</select>
                         </div>
                         <div class="group">

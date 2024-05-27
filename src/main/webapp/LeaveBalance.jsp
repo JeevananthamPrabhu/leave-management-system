@@ -28,7 +28,7 @@
                                 <td>Remaining Leaves</td>
                             </thead>
                             <tbody>
-                            <% Object ListObj = request.getAttribute("List");
+                            <% Object ListObj = session.getAttribute("List");
                             		int cnt=1;
                 if(ListObj != null){
                 	List<LeaveTrackingModel> List = (List<LeaveTrackingModel>) ListObj;

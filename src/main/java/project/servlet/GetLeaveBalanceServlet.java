@@ -6,22 +6,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import project.controller.LeaveBalanceController;
-
 
 import java.io.IOException;
 
 /**
- * Servlet implementation class DisplayLeaveBalanceServlet
+ * Servlet implementation class GetLeaveBalanceServlet
  */
-public class DisplayLeaveBalanceServlet extends HttpServlet {
+public class GetLeaveBalanceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DisplayLeaveBalanceServlet() {
+    public GetLeaveBalanceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,7 +36,7 @@ public class DisplayLeaveBalanceServlet extends HttpServlet {
 				//request.setAttribute("username",model.getusername());
 				System.out.println("getleavedata Success");
 					session.setAttribute("List", control.List);
-					response.sendRedirect("LeaveBalance.jsp");
+					response.sendRedirect("Apply.jsp");
 			}	
 			else {
 				System.out.println("getleavedata Fail");
