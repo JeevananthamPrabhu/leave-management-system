@@ -69,8 +69,7 @@ public class ApplyLeaveServlet extends HttpServlet {
 					//request.setAttribute("username", username);
 					//request.setAttribute("resultList", control.resultList);
 					//request.setAttribute("leaveadded", "");
-				request.setAttribute("currentPage", "Apply.jsp");
-					request.getRequestDispatcher("Apply.jsp").forward(request, response);
+				response.sendRedirect("Apply.jsp");
 					//System.out.println("Task get Success");
 			}
 			else
